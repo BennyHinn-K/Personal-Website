@@ -32,7 +32,6 @@ export default function SkillsSection() {
     // Design Skills
     { name: 'UI/UX Design', level: 90, category: 'design', icon: <Palette className="w-6 h-6" />, color: 'cyber-pink' },
     { name: 'Figma', level: 95, category: 'design', icon: <Palette className="w-6 h-6" />, color: 'cyber-pink' },
-    { name: 'Adobe Creative Suite', level: 88, category: 'design', icon: <Palette className="w-6 h-6" />, color: 'cyber-pink' },
     { name: 'Graphic Design', level: 92, category: 'design', icon: <Palette className="w-6 h-6" />, color: 'cyber-pink' },
     
     // AI Skills (refined)

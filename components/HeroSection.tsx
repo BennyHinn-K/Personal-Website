@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Typewriter from 'typewriter-effect';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -88,50 +89,24 @@ export default function HeroSection() {
             <div className="relative">
               {/* Main circular profile - Made bigger and more prominent */}
               <motion.div
-                className="relative w-80 h-80 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px]"
+                className="relative w-80 h-80 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] flex items-center justify-center"
                 style={{
-                  transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`,
+                  transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`
                 }}
-                whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
               >
-                {/* Enhanced outer rings with glow */}
-                <div className="absolute inset-0 rounded-full border-2 border-cyber-cyan/40 animate-spin shadow-2xl shadow-cyber-cyan/30" style={{ animationDuration: '20s' }} />
-                <div className="absolute inset-3 rounded-full border-2 border-cyber-purple/50 animate-spin shadow-2xl shadow-cyber-purple/20" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
-                <div className="absolute inset-6 rounded-full border border-cyber-pink/30 animate-spin shadow-xl shadow-cyber-pink/20" style={{ animationDuration: '10s' }} />
-                <div className="absolute inset-9 rounded-full border border-cyber-green/25 animate-spin shadow-xl shadow-cyber-green/15" style={{ animationDuration: '25s', animationDirection: 'reverse' }} />
-                
-                {/* Main image container - Fuller and better positioned */}
-                <div className="absolute inset-12 rounded-full overflow-hidden border-4 border-cyber-cyan/80 shadow-2xl shadow-cyber-cyan/40 bg-gradient-to-br from-cyber-cyan/10 via-cyber-dark/80 to-cyber-purple/10 flex items-center justify-center">
-                  <img
+                {/* Clean circular profile image with subtle border and shadow */}
+                <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-cyber-cyan/80 shadow-xl bg-cyber-dark flex items-center justify-center">
+                  <Image
                     src="/profile.jpg"
                     alt="BENNYHINN Profile"
-                    className="w-full h-full object-cover object-center rounded-full border-2 border-cyber-purple/40 shadow-lg shadow-cyber-cyan/30 transition-transform duration-300 hover:scale-105"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    className="rounded-full border-2 border-cyber-purple/40 shadow-lg transition-transform duration-300 hover:scale-105"
+                    priority
                   />
-                  
-                  {/* Enhanced holographic overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/25 via-transparent to-cyber-purple/25 mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-tl from-cyber-pink/15 via-transparent to-cyber-green/15 mix-blend-soft-light" />
-                  
-                  {/* Enhanced scanning effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-cyan/50 to-transparent h-12 animate-matrix-rain opacity-70" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-purple/30 to-transparent w-12 animate-matrix-rain opacity-50" style={{ animationDelay: '2s' }} />
-                  
-                  {/* Pulse overlay */}
-                  <div className="absolute inset-0 rounded-full bg-cyber-cyan/10 animate-pulse" />
                 </div>
-                
-                {/* Enhanced floating particles */}
-                <div className="absolute -top-3 left-1/2 w-4 h-4 bg-cyber-cyan rounded-full animate-float glow-effect shadow-lg shadow-cyber-cyan/50" />
-                <div className="absolute top-1/4 -right-3 w-3 h-3 bg-cyber-purple rounded-full animate-float glow-effect shadow-lg shadow-cyber-purple/50" style={{ animationDelay: '1s' }} />
-                <div className="absolute bottom-1/4 -left-3 w-3 h-3 bg-cyber-pink rounded-full animate-float glow-effect shadow-lg shadow-cyber-pink/50" style={{ animationDelay: '2s' }} />
-                <div className="absolute -bottom-3 right-1/4 w-4 h-4 bg-cyber-green rounded-full animate-float glow-effect shadow-lg shadow-cyber-green/50" style={{ animationDelay: '3s' }} />
-                <div className="absolute top-1/2 -left-4 w-2 h-2 bg-cyber-cyan rounded-full animate-float glow-effect" style={{ animationDelay: '4s' }} />
-                <div className="absolute bottom-1/3 -right-4 w-2 h-2 bg-cyber-purple rounded-full animate-float glow-effect" style={{ animationDelay: '5s' }} />
-                
-                {/* Data streams effect */}
-                <div className="absolute inset-0 rounded-full border border-cyber-cyan/20 animate-ping" style={{ animationDuration: '3s' }} />
-                <div className="absolute inset-0 rounded-full border border-cyber-purple/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
               </motion.div>
             </div>
           </motion.div>
@@ -155,7 +130,7 @@ export default function HeroSection() {
               className="text-5xl lg:text-8xl xl:text-9xl font-black mb-8 text-gradient leading-none"
               variants={itemVariants}
             >
-              Hi. I'm <br />
+              Hi. I&apos;m <br />
               <span className="text-cyber-cyan font-mono">BENNYHINN</span>
             </motion.h1>
             
@@ -195,7 +170,7 @@ export default function HeroSection() {
               variants={itemVariants}
             >
               <motion.button 
-                className="cyber-button rounded-xl text-lg px-8 py-4 magnetic-btn"
+                className="cyber-button rounded-xl text-lg px-8 py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open('https://wa.me/254111291633', '_blank')}
@@ -203,7 +178,7 @@ export default function HeroSection() {
                 <span className="relative z-10">HIRE ME NOW</span>
               </motion.button>
               <motion.button 
-                className="cyber-button rounded-xl text-lg px-8 py-4 magnetic-btn"
+                className="cyber-button rounded-xl text-lg px-8 py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -211,7 +186,7 @@ export default function HeroSection() {
                 <span className="relative z-10">VIEW PROJECTS</span>
               </motion.button>
               <motion.button 
-                className="cyber-button rounded-xl text-lg px-8 py-4 magnetic-btn"
+                className="cyber-button rounded-xl text-lg px-8 py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open('https://github.com/BennyHinn-K', '_blank')}

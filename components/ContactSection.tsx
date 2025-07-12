@@ -86,8 +86,8 @@ Looking forward to working with you!`;
       icon: <Mail className="w-8 h-8" />,
       title: 'Email',
       description: 'Professional inquiries',
-      value: 'bennyhinn@dev.com',
-      action: () => window.open('mailto:bennyhinn@dev.com', '_blank'),
+      value: 'kariukihinn@gmail.com',
+      action: () => window.open('mailto:kariukihinn@gmail.com', '_blank'),
       color: 'from-cyber-purple to-cyber-pink'
     },
     {
@@ -139,10 +139,10 @@ Looking forward to working with you!`;
             &lt; CONTACT /&gt;
           </span>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-gradient">
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </h2>
           <p className="text-xl text-cyber-silver/80 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your project and create 
+            Ready to bring your ideas to life? Let&apos;s discuss your project and create 
             something <span className="text-cyber-green">extraordinary</span> together.
           </p>
         </motion.div>
@@ -309,7 +309,7 @@ Looking forward to working with you!`;
               </button>
               
               <button
-                onClick={() => window.open('mailto:bennyhinn@dev.com?subject=Project Inquiry', '_blank')}
+                onClick={() => window.open('mailto:kariukihinn@gmail.com?subject=Project Inquiry', '_blank')}
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-cyber-purple hover:bg-cyber-pink text-white rounded-lg transition-colors"
               >
                 <Calendar className="w-5 h-5" />
